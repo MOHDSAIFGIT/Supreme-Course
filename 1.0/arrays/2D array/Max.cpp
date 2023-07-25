@@ -1,5 +1,5 @@
 #include <iostream>
-#include<limits.h>
+#include <limits.h>
 using namespace std;
 
 void printMax(int arr[][3], int rows, int cols)
@@ -8,16 +8,16 @@ void printMax(int arr[][3], int rows, int cols)
     cout << "Printing row-wise Sum : " << endl;
     for (int i = 0; i < rows; i++)
     {
-        
+
         for (int j = 0; j < cols; j++)
         {
-            if(arr[i][j]>Max){
+            if (arr[i][j] > Max)
+            {
                 Max = arr[i][j];
             }
         }
-        
     }
-    cout<< "Maximum is : "<<Max;
+    cout << "Maximum is : " << Max;
 }
 
 int main()
