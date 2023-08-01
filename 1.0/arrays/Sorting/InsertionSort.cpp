@@ -15,18 +15,39 @@ int main()
         arr[i] = UI;
     }
 
-    for (int i = 1; i < n; i++)
-    {
+    // for (int i = 1; i < n; i++)
+    // {
 
-        int current = arr[i];
-        int j = i - 1;
+    //     int current = arr[i];
+    //     int j = i - 1;
 
-        while (arr[j] > current && j>=0)
-        {
-            arr[j + 1] = arr[j];
-            j--;
+    //     while (arr[j] > current && j>=0)
+    //     {
+    //         arr[j + 1] = arr[j];
+    //         j--;
+    //     }
+    //     arr[j + 1] = current;
+    // }
+
+    // using for loop (Love Babbar)
+
+    for(int round = 1 ; round<n;round++){
+        // Step A : Fetch
+        int val = arr[round];
+
+        int j = round-1 ;
+        // Step B : Compare
+        for(; j>=0;j--){
+            if(arr[j]>val){
+                //Step C : shift
+                arr[j+1] = arr[j];
+            }
+            else{
+                break;
+            }
         }
-        arr[j + 1] = current;
+        //Step D : Copy
+        arr[j+1] = val;
     }
 
     cout << "The sorted array is : ";
