@@ -1,26 +1,27 @@
 #include <iostream>
 using namespace std;
 
-void print (int arr[],int n , int i){
-    //base case
-    if(i>=n)
-        return ;
+void print(int arr[], int n, int i)
+{
+    // base case
+    if (i >= n)
+        return;
+    //ek case solve krdiya
+    cout << arr[i] << " ";
 
-    cout<<arr[i];
-    print(arr,n,i+1);
+    //baaki recursion sambhal lega
+    print(arr, n, i + 1);
 }
 
-int main(){
-    int n;
-    cout<<"Enter the size of array: ";
-    cin>>n;
+int main()
+{
+    cout << "Enter the size of array: ";
+    // cin >> n;
     int i = 0;
-    int arr[n];
-    cout<<"Enter the element of array : ";
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-    }
-    cout<<"Array are : "<<endl;
-    print(arr,n,i);
+    int n = 5;
+    int arr[5] = {10, 20, 30, 40, 50};
+
+    cout << "Array are : " << endl;
+    print(arr, n, i);
     return 0;
 }
