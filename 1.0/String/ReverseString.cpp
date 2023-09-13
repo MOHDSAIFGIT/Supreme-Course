@@ -35,11 +35,11 @@ int main()
     char name[100];
     cin >> name;
 
-    cout << "length is" << getLength(name) << endl;
+    cout << "length is" <<" " << getLength(name) << endl;
 
     cout << "initially: " << name << endl;
     reverseChar(name);
-    cout << "After Reverse" << name << endl;
+    cout << "After Reverse:" << " " <<name << endl;
 
     return 0;
 }
