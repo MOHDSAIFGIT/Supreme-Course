@@ -66,6 +66,36 @@ void insertAtTail(Node * &head,Node* &tail , int data){
     tail = newNode;
 }
 
+void insertAtPosition(int data,int position,Node* &head,Node* &tail){
+
+    if(head == NULL){
+        Node* newNode = new Node(data);
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+
+    //step 1 : find the position : prev and current
+    int i = 1;
+    Node* prev = head;
+    while(i<position){
+        prev = prev->next;
+        i++
+    }
+
+    Node* curr = prev-> next;
+
+    //step 2
+    Node* newNode = new Node(data);
+
+    //step 3
+    newNode -> next = curr;
+
+
+    //step 4
+    prev -> next = newNode;
+}
+
 int main(){
 
     Node* head = NULL;
