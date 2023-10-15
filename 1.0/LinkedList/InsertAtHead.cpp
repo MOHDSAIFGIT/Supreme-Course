@@ -80,7 +80,7 @@ void insertAtPosition(int data,int position,Node* &head,Node* &tail){
     Node* prev = head;
     while(i<position){
         prev = prev->next;
-        i++
+        i++;
     }
 
     Node* curr = prev-> next;
