@@ -14,12 +14,24 @@ class Stack{
     }
 
     void push(int data){
-        top++;
-        arr[top] = data;
+        if(top == size-1){
+            cout << "Stack overflow" << endl;
+            return;
+        }
+        else{
+            top++;
+            arr[top] = data;
+        }
     }
 
     void pop(){
-        top--;
+        if(top == -1){
+            cout << "Stack is empty" << endl;
+            return;
+        }
+        else{
+            top--;
+        }
     }
 
     bool isEmpty(){
@@ -32,15 +44,49 @@ class Stack{
     }
 
     int getTop(){
-        return arr[top];
+        if(top==-1){
+            cout<< "Top is empty"<< endl;
+            return -1;
+        }
+        else{
+            return arr[top];
+        }
     }
 
     int getSize(){
         return top+1;
     }
+
+    void print(){
+        cout<< "Top: "<<top <<endl;
+        cout<<"Top Element: "<<getTop()<<endl;
+        cout<< "Stack: ";
+        for(int i = 0; i < getSize(); i++){
+            cout<< arr[i]<<" ";
+        }cout<< endl << endl;    
+    }
 };
 
 int main() {
+
+    //creation
+    Stack st(8);
+
+    //push
+    st.push(10);
+    st.print();
+
+    st.push(20);
+    st.print();
+
+    // st.push(30);
+    // st.print();
+
+    // st.pop();
+    // st.print();
+
+    cout<<"Top element: "<< st.getTop()<<endl;
+    cout<<"Size of stack: "<< st.getSize()<<endl;
 
     return 0;
 }
